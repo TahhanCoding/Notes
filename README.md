@@ -1,1 +1,1 @@
-# myNotesApp
+# myNotes
