@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Noi-J6-cee">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Collection Controller-->
+        <scene sceneID="Pwg-mN-0ns">
+            <objects>
+                <collectionViewController id="mv8-iQ-GSc" customClass="collectionController" customModule="Challenge7_myNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" dataMode="prototypes" id="NoN-mm-Lgk">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="layoutMargins" id="f7k-jW-lFe">
+                            <size key="itemSize" width="330" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <imageView key="backgroundView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBack" id="7b7-ud-KSy">
+                            <rect key="frame" x="0.0" y="-88" width="390" height="844"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.69999999999999996" contentMode="scaleAspectFit" reuseIdentifier="Cell" id="9zC-8V-WP5" userLabel="Note" customClass="NoteCell" customModule="Challenge7_myNotes" customModuleProvider="target">
+                                <rect key="frame" x="30" y="0.0" width="330" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="330" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" axis="vertical" alignment="bottom" spacing="-15" translatesAutoresizingMaskIntoConstraints="NO" id="hw3-sL-Unf">
+                                            <rect key="frame" x="20" y="-40" width="290" height="180"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="my first Note" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="15" preferredMaxLayoutWidth="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="cA6-o1-Z2K">
+                                                    <rect key="frame" x="0.0" y="0.0" width="290" height="180"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="290" id="OhI-jt-Phk"/>
+                                                        <constraint firstAttribute="height" constant="180" id="bA8-Px-mjK"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AlNile" family="Al Nile" pointSize="27"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="0.69916266637132662" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="hw3-sL-Unf" firstAttribute="centerX" secondItem="9zC-8V-WP5" secondAttribute="centerX" id="DGM-8h-wtu"/>
+                                    <constraint firstItem="hw3-sL-Unf" firstAttribute="centerY" secondItem="9zC-8V-WP5" secondAttribute="centerY" id="k0N-TD-Xc4"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="noteTitle" destination="cA6-o1-Z2K" id="sqi-Mi-g8V"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="mv8-iQ-GSc" id="VNc-pD-CAu"/>
+                            <outlet property="delegate" destination="mv8-iQ-GSc" id="h3c-bh-Mnp"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="OOA-hD-T4H"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKi-RM-Nid" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="48"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PoB-Cd-T4Q">
+            <objects>
+                <viewController storyboardIdentifier="NoteContent" id="KdP-8R-r89" customClass="ViewController" customModule="Challenge7_myNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nPI-Lf-T0O">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainBack" translatesAutoresizingMaskIntoConstraints="NO" id="Cet-JJ-ebJ">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                            </imageView>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hi, This is Ahmed." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FPW-7H-Vhr">
+                                <rect key="frame" x="0.0" y="89" width="390" height="692"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemFillColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VZR-g9-Ueq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cet-JJ-ebJ" firstAttribute="top" secondItem="nPI-Lf-T0O" secondAttribute="topMargin" constant="-44" id="0Fa-Aj-Vp6"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="FPW-7H-Vhr" secondAttribute="bottom" constant="-20" id="7oE-X8-0FS"/>
+                            <constraint firstItem="FPW-7H-Vhr" firstAttribute="top" secondItem="VZR-g9-Ueq" secondAttribute="top" constant="45" id="Gr7-Vd-TlV"/>
+                            <constraint firstItem="Cet-JJ-ebJ" firstAttribute="centerY" secondItem="nPI-Lf-T0O" secondAttribute="centerY" id="L0I-Fh-M5j"/>
+                            <constraint firstItem="Cet-JJ-ebJ" firstAttribute="leading" secondItem="FPW-7H-Vhr" secondAttribute="leading" id="LiQ-Ut-0ae"/>
+                            <constraint firstItem="Cet-JJ-ebJ" firstAttribute="trailing" secondItem="FPW-7H-Vhr" secondAttribute="trailing" id="aAP-WJ-Mh4"/>
+                            <constraint firstItem="FPW-7H-Vhr" firstAttribute="leading" secondItem="VZR-g9-Ueq" secondAttribute="leading" id="t1M-42-0za"/>
+                            <constraint firstItem="Cet-JJ-ebJ" firstAttribute="centerX" secondItem="nPI-Lf-T0O" secondAttribute="centerX" id="ysQ-Cs-sSz"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="noteText" destination="FPW-7H-Vhr" id="gvR-DA-z8g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ykr-uq-kbW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2172" y="48"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NIy-Ch-xqq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Noi-J6-cee" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o2t-TN-bAI">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="mv8-iQ-GSc" kind="relationship" relationship="rootViewController" id="DFP-dQ-c2d"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wb1-o7-VNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="595" y="48"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="mainBack" width="4597" height="3055"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemFillColor">
+            <color red="0.46274509803921571" green="0.46274509803921571" blue="0.50196078431372548" alpha="0.12" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
